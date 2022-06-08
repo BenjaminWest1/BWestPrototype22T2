@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RubbishBag : MonoBehaviour
 {
-    public ScoreScript score;
+    public GameObject flower;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,7 @@ public class RubbishBag : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("hit" + this.transform.parent.parent.name);
+        Instantiate(flower, this.transform.parent.position, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))).transform.SetParent(null);
         gameObject.transform.parent.parent.gameObject.SetActive(false);
         FindObjectOfType<ScoreScript>().UpdateScore(1);
     }
