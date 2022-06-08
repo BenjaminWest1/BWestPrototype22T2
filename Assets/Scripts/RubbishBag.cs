@@ -15,4 +15,9 @@ public class RubbishBag : MonoBehaviour
     {
         
     }
+
+    void OnMouseDown()
+    {
+        Debug.Log("hit" + this.transform.parent.parent.name);
+    }
 }
